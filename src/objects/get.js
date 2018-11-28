@@ -21,5 +21,5 @@
  * // result is 'not found'
  *
  * var result = get(x, ['key4', '0'], 'not found');
- * // result is 'b'
+ * // result is 'a'
  */

@@ -1,7 +1,7 @@
 /**
  * map(collection, cb)
  * ----------
- * Creates a new collection by iterating over each item in the collection
+ * Returns a new array created by iterating over each item in the collection
  * and using the value returned after transforming it with the callback function.
  * On each iteration, it invokes the cb function and uses this transformed value
  * in the new collection.
