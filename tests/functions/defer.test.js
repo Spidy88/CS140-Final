@@ -17,14 +17,6 @@ describe('defer', function() {
         clock.restore();
     });
 
-    it('should return a function', function() {
-        var input = sinon.fake();
-        var outputFn = defer(input);
-
-        expect(outputFn).to.be.a('function');
-        expect(input).to.not.have.been.called;
-    });
-
     it('should call the passed function immediately after the current event stack completes', function() {
         var input = sinon.fake();
 

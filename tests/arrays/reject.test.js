@@ -19,19 +19,19 @@ describe('reject', function() {
         expect(output).to.have.members([1, 3]);
     });
 
-    it('should return a new array with all elements when the filter returns true', function() {
+    it('should return a new array with no elements when the rejection filter returns true', function() {
         var input = [1, 2, 3, 4];
-        var output = filter(input, alwaysTrue);
+        var output = reject(input, alwaysTrue);
+
+        expect(output).to.have.lengthOf(0);
+    });
+
+    it('should return a new array with all elements when the rejection filter returns false', function() {
+        var input = [1, 2, 3, 4];
+        var output = reject(input, alwaysFalse);
 
         expect(output).to.have.lengthOf(4);
         expect(output).to.have.members(input);
-    });
-
-    it('should return a new array with no elements when the filter returns false', function() {
-        var input = [1, 2, 3, 4];
-        var output = filter(input, alwaysFalse);
-
-        expect(output).to.have.lengthOf(0);
     });
 
     function isOdd(x) {

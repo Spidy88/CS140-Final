@@ -18,9 +18,9 @@ describe('reduce', function() {
         var output = reduce(input, cb, 0);
 
         expect(cb).to.have.callCount(3);
-        expect(cb).to.have.been.calledWith(input[0], 0, input);
-        expect(cb).to.have.been.calledWith(input[1], 1, input);
-        expect(cb).to.have.been.calledWith(input[2], 2, input);
+        expect(cb).to.have.been.calledWith(0, input[0]);
+        expect(cb).to.have.been.calledWith(1, input[1]);
+        expect(cb).to.have.been.calledWith(3, input[2]);
         expect(output).to.eql(6);
     });
 
@@ -31,9 +31,9 @@ describe('reduce', function() {
         var output = reduce(input, cb, 5);
 
         expect(cb).to.have.callCount(3);
-        expect(cb).to.have.been.calledWith(input[0], 0, input);
-        expect(cb).to.have.been.calledWith(input[1], 1, input);
-        expect(cb).to.have.been.calledWith(input[2], 2, input);
+        expect(cb).to.have.been.calledWith(5, input[0]);
+        expect(cb).to.have.been.calledWith(6, input[1]);
+        expect(cb).to.have.been.calledWith(8, input[2]);
         expect(output).to.eql(11);
     });
 
